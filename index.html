@@ -6,179 +6,251 @@
 
 <style>
 body {
-  margin: 0;
+  margin:0;
   font-family: Arial;
-  background: #0b0b0b;
-  color: white;
+  background:#0b0b0b;
+  color:white;
 }
 
-/* NAVBAR */
+/* NAV */
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: black;
-  border-bottom: 1px solid red;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px;
+  border-bottom:1px solid red;
 }
 
-.nav h2 {
-  color: red;
-  margin: 0;
+.logo {
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
 
-.nav a {
-  color: white;
-  margin-left: 15px;
-  text-decoration: none;
-  font-size: 14px;
+.logo img {
+  width:30px;
+}
+
+.logo span {
+  color:red;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.menu {
+  font-size:22px;
 }
 
 /* HERO */
 .hero {
-  text-align: center;
-  padding: 40px 20px;
+  text-align:center;
+  padding:30px 20px;
 }
 
-.hero h1 {
-  color: red;
-  font-size: 32px;
+.hero img {
+  width:130px;
+  border-radius:50%;
+  border:2px solid red;
 }
 
-.hero p {
-  color: #aaa;
+.telegram {
+  margin-top:15px;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: red;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
+.telegram a {
+  text-decoration:none;
+  color:white;
+  background:red;
+  padding:10px 20px;
+  border-radius:10px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 }
 
-/* BUTTONS SWITCH */
-.switch {
-  text-align: center;
-  margin: 20px;
+/* BUTTONS */
+.tabs {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:20px;
 }
 
-.switch button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 20px;
-  background: #222;
-  color: white;
+.tabs button {
+  background:#222;
+  border:none;
+  padding:10px 20px;
+  color:white;
+  border-radius:20px;
 }
 
 /* GRID */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  padding: 20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  padding:15px;
 }
 
 .card {
-  background: #111;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  border: 1px solid #222;
+  background:#111;
+  border-radius:15px;
+  padding:15px;
+  text-align:center;
+  border:1px solid #222;
 }
 
 .card img {
-  width: 60px;
+  width:60px;
+  margin-bottom:10px;
 }
 
 .card h3 {
-  margin: 10px 0 5px;
-  font-size: 16px;
+  margin:5px 0;
 }
 
-.download {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background: red;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
+.btn {
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 15px;
+  background:red;
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
 }
 
 /* FOOTER */
 .footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
-  font-size: 13px;
+  text-align:center;
+  font-size:12px;
+  padding:20px;
+  color:gray;
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="nav">
-  <h2>iOSGhost</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">Apps</a>
-    <a href="#">Games</a>
-    <a href="#">Contact</a>
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+    <span>iOSGhost</span>
   </div>
+  <div class="menu">☰</div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <h1>IPA Library</h1>
-  <p>Download your favorite apps & games</p>
-
-  <!-- TELEGRAM BUTTON -->
-  <a class="btn" href="https://t.me/i0sghost">Join Telegram</a>
+  <img src="https://i.imgur.com/2yaf2wb.png">
+  
+  <div class="telegram">
+    <a href="https://t.me/i0sghost">
+      Join Telegram
+    </a>
+  </div>
 </div>
 
-<!-- SWITCH -->
-<div class="switch">
+<!-- TABS -->
+<div class="tabs">
   <button>Apps</button>
   <button>Games</button>
 </div>
 
-<!-- APPS GRID -->
+<!-- APPS -->
 <div class="grid">
 
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png">
-    <h3>Spotify++</h3>
-    <a class="download" href="#">Download</a>
-  </div>
+<!-- 0 -->
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg">
+<h3>Netflix</h3>
+<a href="#" class="btn">Download</a>
+</div>
 
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
-    <h3>YouTube++</h3>
-    <a class="download" href="#">Download</a>
-  </div>
+<!-- 1 -->
+<div class="card">
+<img src="https://i.imgur.com/9Xn4X2R.png">
+<h3>Red Dead Redemption</h3>
+<a href="#" class="btn">Download</a>
+</div>
 
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
-    <h3>E-Sign</h3>
-    <a class="download" href="#">Download</a>
-  </div>
+<!-- 2 -->
+<div class="card">
+<img src="https://i.imgur.com/l6pV7ZV.png">
+<h3>Shadow Fight 4</h3>
+<a href="#" class="btn">Download</a>
+</div>
 
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
-    <h3>TrollStore</h3>
-    <a class="download" href="#">Download</a>
-  </div>
+<!-- 3 -->
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/en/c/c4/GTASABOX.jpg">
+<h3>GTA San Andreas</h3>
+<a href="#" class="btn">Download</a>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_Vice_City.png">
+<h3>GTA Vice City</h3>
+<a href="#" class="btn">Download</a>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<img src="https://i.imgur.com/3WfYq4X.png">
+<h3>8 Ball Pool (MOD)</h3>
+<a href="#" class="btn">Download</a>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<img src="https://i.imgur.com/6KZ7F8X.png">
+<h3>Car Parking</h3>
+<a href="#" class="btn">Download</a>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png">
+<h3>Minecraft</h3>
+<a href="#" class="btn">Download</a>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<img src="https://i.imgur.com/kX7Z4XW.png">
+<h3>Wink (Premium)</h3>
+<a href="#" class="btn">Download</a>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<img src="https://i.imgur.com/FcZz6Xc.png">
+<h3>Alight Motion</h3>
+<a href="#" class="btn">Download</a>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<img src="https://i.imgur.com/jT9Z1XH.png">
+<h3>InShot</h3>
+<a href="#" class="btn">Download</a>
+</div>
+
+<!-- 11 -->
+<div class="card">
+<img src="https://i.imgur.com/1W7ZQ0p.png">
+<h3>VSCO</h3>
+<a href="#" class="btn">Download</a>
+</div>
 
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  © 2026 iOSGhost - All Rights Reserved
+For any problem or more apps than here, contact us on the Telegram above.<br><br>
+Për çdo problem dhe më shumë app se këtu, na kontaktoni në Telegramin që kemi lënë më sipër.
 </div>
 
 </body>
