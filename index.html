@@ -6,251 +6,237 @@
 
 <style>
 body {
-  margin:0;
+  margin: 0;
   font-family: Arial;
-  background:#0b0b0b;
-  color:white;
+  background: #0b0b0b;
+  color: white;
 }
 
-/* NAV */
+/* NAVBAR */
 .nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px;
-  border-bottom:1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid red;
 }
 
 .logo {
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.logo img {
-  width:30px;
-}
-
-.logo span {
-  color:red;
-  font-weight:bold;
-  font-size:18px;
-}
-
-.menu {
-  font-size:22px;
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /* HERO */
 .hero {
-  text-align:center;
-  padding:30px 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .hero img {
-  width:130px;
-  border-radius:50%;
-  border:2px solid red;
+  width: 140px;
+  border-radius: 50%;
+  border: 3px solid red;
+  box-shadow: 0 0 20px red;
 }
 
-.telegram {
-  margin-top:15px;
+/* TELEGRAM BUTTON */
+.telegram-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 35px;
+  background: linear-gradient(45deg, #ff0000, #ff3b3b);
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255,0,0,0.7);
 }
 
-.telegram a {
-  text-decoration:none;
-  color:white;
-  background:red;
-  padding:10px 20px;
-  border-radius:10px;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
+/* FILTERS */
+.filters {
+  text-align: center;
+  margin-top: 20px;
 }
 
-/* BUTTONS */
-.tabs {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:20px;
-}
-
-.tabs button {
-  background:#222;
-  border:none;
-  padding:10px 20px;
-  color:white;
-  border-radius:20px;
+.filters button {
+  background: #1a1a1a;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
 }
 
 /* GRID */
-.grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  padding:15px;
+.apps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
 }
 
+/* CARD */
 .card {
-  background:#111;
-  border-radius:15px;
-  padding:15px;
-  text-align:center;
-  border:1px solid #222;
+  background: #111;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #222;
+  box-shadow: 0 0 10px rgba(255,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px red;
 }
 
 .card img {
-  width:60px;
-  margin-bottom:10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
 }
 
-.card h3 {
-  margin:5px 0;
-}
-
-.btn {
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 15px;
-  background:red;
-  color:white;
-  border-radius:8px;
-  text-decoration:none;
+/* DOWNLOAD */
+.download {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 25px;
+  background: linear-gradient(45deg, red, #ff2a2a);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* FOOTER */
-.footer {
-  text-align:center;
-  font-size:12px;
-  padding:20px;
-  color:gray;
+.footer-text {
+  text-align: center;
+  margin: 40px 20px;
+  font-size: 14px;
+  color: #aaa;
 }
 </style>
 
 </head>
-
 <body>
 
-<!-- NAV -->
 <div class="nav">
-  <div class="logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
-    <span>iOSGhost</span>
-  </div>
-  <div class="menu">☰</div>
+  <div class="logo">iOSGhost</div>
+  <div>☰</div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
-  <img src="https://i.imgur.com/2yaf2wb.png">
-  
-  <div class="telegram">
-    <a href="https://t.me/i0sghost">
-      Join Telegram
-    </a>
-  </div>
+  <!-- LOGO JOTE -->
+  <img src="logo.png">
+
+  <br>
+
+  <a class="telegram-btn" href="https://t.me/i0sghost">Join Telegram</a>
 </div>
 
-<!-- TABS -->
-<div class="tabs">
+<div class="filters">
   <button>Apps</button>
   <button>Games</button>
 </div>
 
-<!-- APPS -->
-<div class="grid">
+<div class="apps">
 
 <!-- 0 -->
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg">
-<h3>Netflix</h3>
-<a href="#" class="btn">Download</a>
+  <img src="netflix.png">
+  <h3>Netflix</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 1 -->
 <div class="card">
-<img src="https://i.imgur.com/9Xn4X2R.png">
-<h3>Red Dead Redemption</h3>
-<a href="#" class="btn">Download</a>
+  <img src="rdr.png">
+  <h3>Red Dead Redemption</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 2 -->
 <div class="card">
-<img src="https://i.imgur.com/l6pV7ZV.png">
-<h3>Shadow Fight 4</h3>
-<a href="#" class="btn">Download</a>
+  <img src="shadow.png">
+  <h3>Shadow Fight 4 Arena</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 3 -->
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/en/c/c4/GTASABOX.jpg">
-<h3>GTA San Andreas</h3>
-<a href="#" class="btn">Download</a>
+  <img src="gta_sa.png">
+  <h3>GTA San Andreas</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 4 -->
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_Vice_City.png">
-<h3>GTA Vice City</h3>
-<a href="#" class="btn">Download</a>
+  <img src="gta_vc.png">
+  <h3>GTA Vice City</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 5 -->
 <div class="card">
-<img src="https://i.imgur.com/3WfYq4X.png">
-<h3>8 Ball Pool (MOD)</h3>
-<a href="#" class="btn">Download</a>
+  <img src="8ball.png">
+  <h3>8 Ball Pool (MOD)</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 6 -->
 <div class="card">
-<img src="https://i.imgur.com/6KZ7F8X.png">
-<h3>Car Parking</h3>
-<a href="#" class="btn">Download</a>
+  <img src="car.png">
+  <h3>Car Parking</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 7 -->
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png">
-<h3>Minecraft</h3>
-<a href="#" class="btn">Download</a>
+  <img src="minecraft.png">
+  <h3>Minecraft</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 8 -->
 <div class="card">
-<img src="https://i.imgur.com/kX7Z4XW.png">
-<h3>Wink (Premium)</h3>
-<a href="#" class="btn">Download</a>
+  <img src="wink.png">
+  <h3>Wink (Premium)</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 9 -->
 <div class="card">
-<img src="https://i.imgur.com/FcZz6Xc.png">
-<h3>Alight Motion</h3>
-<a href="#" class="btn">Download</a>
+  <img src="alight.png">
+  <h3>Alight Motion</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 10 -->
 <div class="card">
-<img src="https://i.imgur.com/jT9Z1XH.png">
-<h3>InShot</h3>
-<a href="#" class="btn">Download</a>
+  <img src="inshot.png">
+  <h3>InShot</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 <!-- 11 -->
 <div class="card">
-<img src="https://i.imgur.com/1W7ZQ0p.png">
-<h3>VSCO</h3>
-<a href="#" class="btn">Download</a>
+  <img src="vsco.png">
+  <h3>VSCO</h3>
+  <a class="download" href="#">Download</a>
 </div>
 
 </div>
 
 <!-- FOOTER -->
-<div class="footer">
-For any problem or more apps than here, contact us on the Telegram above.<br><br>
-Për çdo problem dhe më shumë app se këtu, na kontaktoni në Telegramin që kemi lënë më sipër.
+<div class="footer-text">
+  <p>
+    For any problems or more apps, contact us on our 
+    <a href="https://t.me/i0sghost">Telegram</a> above.<br>
+    Për çdo problem dhe më shumë aplikacione, na kontaktoni në 
+    <a href="https://t.me/i0sghost">Telegramin</a> më sipër.
+  </p>
 </div>
 
 </body>
