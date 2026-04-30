@@ -102,17 +102,17 @@ h1 span { color:#9b5cff; }
 
 <script>
 async function go(link){
-  let code = prompt("Enter your code:");
+    let code = prompt("Enter your code:");
 
-  let res = await fetch("https://LINKU-YT-REPLIT/verify?code="+code);
-  let data = await res.json();
+    let res = await fetch("https://telegram-bot-mpya.onrender.com/verify?code=" + code);
+    let data = await res.json();
 
-  if(data.ok){
-    alert("Unlocked!");
-    window.location.href = link;
-  } else {
-    alert("Wrong code!");
-  }
+    if(data.valid){
+        alert("Unlocked ✅");
+        window.location.href = link;
+    } else {
+        alert("Invalid code ❌");
+    }
 }
 </script>
 
