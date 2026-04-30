@@ -7,163 +7,112 @@
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #0f0c29, #000);
-  color: white;
-  text-align: center;
+  margin:0;
+  font-family:Arial;
+  background: radial-gradient(circle,#0f0c29,#000);
+  color:white;
+  text-align:center;
 }
 
-/* LOGO */
-.logo {
-  margin-top: 40px;
-}
 .logo img {
-  width: 120px;
-  border-radius: 50%;
-  box-shadow: 0 0 25px red;
+  width:120px;
+  margin-top:40px;
+  border-radius:50%;
+  box-shadow:0 0 25px red;
 }
 
-h1 {
-  font-size: 40px;
-  margin: 10px 0;
-}
-h1 span {
-  color: #9b5cff;
+h1 span { color:#9b5cff; }
+
+.box {
+  background:rgba(255,255,255,0.05);
+  margin:25px;
+  padding:20px;
+  border-radius:15px;
 }
 
-.sub {
-  color: #aaa;
-  letter-spacing: 2px;
-  font-size: 12px;
-}
-
-/* CARD */
-.card {
-  background: rgba(255,255,255,0.05);
-  margin: 30px auto;
-  padding: 30px;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-}
-
-/* BUTTON */
 .btn {
-  display: inline-block;
-  padding: 15px 30px;
-  margin-top: 20px;
-  border-radius: 12px;
-  background: linear-gradient(90deg,#7b3cff,#b84cff);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* APPS */
-.apps {
-  margin-top: 40px;
+  background:purple;
+  padding:12px 25px;
+  border-radius:10px;
+  text-decoration:none;
+  color:white;
 }
 
 .app {
-  background: rgba(255,255,255,0.05);
-  margin: 15px auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background:rgba(255,255,255,0.05);
+  margin:15px;
+  padding:15px;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.app img {
-  width: 60px;
-  border-radius: 12px;
-}
-
-.app-info {
-  flex: 1;
-  text-align: left;
-  margin-left: 15px;
-}
+.app img { width:50px; border-radius:10px; }
 
 .download {
-  background: #7b3cff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.footer {
-  margin: 40px 0;
-  color: #777;
-  font-size: 12px;
+  background:#00c853;
+  padding:8px 15px;
+  border-radius:8px;
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGO -->
+<!-- LOGO (vetëm këtë ndrysho) -->
 <div class="logo">
   <img src="logo.png">
 </div>
 
 <h1>iOS<span>Ghost</span></h1>
-<div class="sub">EXCLUSIVE IPA • NO REVOKES • 100% FREE</div>
 
-<!-- TELEGRAM LOCK -->
-<div class="card">
-  <h2>Join our Telegram to unlock downloads</h2>
-  <p>You must join our Telegram channel to access the apps.</p>
-  
-  <a class="btn" href="https://t.me/i0sghost" target="_blank">
-    JOIN TELEGRAM
-  </a>
+<div class="box">
+  <h3>STEP 1</h3>
+  <p>Join Telegram</p>
+  <a href="https://t.me/i0sghost" target="_blank" class="btn">JOIN</a>
+
+  <h3>STEP 2</h3>
+  <p>Open bot and get code</p>
+
+  <h3>STEP 3</h3>
+  <p>Enter code to unlock</p>
 </div>
 
 <!-- APPS -->
-<div class="apps">
 
-  <div class="app">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Logo_eSign.png">
-    <div class="app-info">
-      <b>1. eSign</b><br>
-      Sign IPA files easily
-    </div>
-    <div class="download" onclick="checkAccess()">DOWNLOAD</div>
-  </div>
-
-  <div class="app">
-    <img src="https://i.imgur.com/5cX1KXK.png">
-    <div class="app-info">
-      <b>2. TrollStore</b><br>
-      Permanent IPA install
-    </div>
-    <div class="download" onclick="checkAccess()">DOWNLOAD</div>
-  </div>
-
-  <div class="app">
-    <img src="https://i.imgur.com/3ZQ3Z3Z.png">
-    <div class="app-info">
-      <b>3. Sileo</b><br>
-      Package manager
-    </div>
-    <div class="download" onclick="checkAccess()">DOWNLOAD</div>
-  </div>
-
+<div class="app">
+  <img src="esign.png">
+  <span>eSign</span>
+  <div class="download" onclick="go('LINK1')">Download</div>
 </div>
 
-<div class="footer">
-© iOSGhost
+<div class="app">
+  <img src="trollstore.png">
+  <span>TrollStore</span>
+  <div class="download" onclick="go('LINK2')">Download</div>
+</div>
+
+<div class="app">
+  <img src="filza.png">
+  <span>Filza</span>
+  <div class="download" onclick="go('LINK3')">Download</div>
 </div>
 
 <script>
-function checkAccess() {
-  alert("Join Telegram first to unlock download!");
-  window.open("https://t.me/i0sghost", "_blank");
+async function go(link){
+  let code = prompt("Enter your code:");
+
+  let res = await fetch("https://LINKU-YT-REPLIT/verify?code="+code);
+  let data = await res.json();
+
+  if(data.ok){
+    alert("Unlocked!");
+    window.location.href = link;
+  } else {
+    alert("Wrong code!");
+  }
 }
 </script>
 
