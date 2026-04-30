@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iOSGhost</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b0b0b;
+  color: white;
+}
+
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: black;
+  border-bottom: 1px solid red;
+}
+
+.nav h2 {
+  color: red;
+  margin: 0;
+}
+
+.nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  color: red;
+  font-size: 32px;
+}
+
+.hero p {
+  color: #aaa;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* BUTTONS SWITCH */
+.switch {
+  text-align: center;
+  margin: 20px;
+}
+
+.switch button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  background: #222;
+  color: white;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #222;
+}
+
+.card img {
+  width: 60px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+
+.download {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: red;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+  <h2>iOSGhost</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Apps</a>
+    <a href="#">Games</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>IPA Library</h1>
+  <p>Download your favorite apps & games</p>
+
+  <!-- TELEGRAM BUTTON -->
+  <a class="btn" href="https://t.me/i0sghost">Join Telegram</a>
+</div>
+
+<!-- SWITCH -->
+<div class="switch">
+  <button>Apps</button>
+  <button>Games</button>
+</div>
+
+<!-- APPS GRID -->
+<div class="grid">
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png">
+    <h3>Spotify++</h3>
+    <a class="download" href="#">Download</a>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+    <h3>YouTube++</h3>
+    <a class="download" href="#">Download</a>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
+    <h3>E-Sign</h3>
+    <a class="download" href="#">Download</a>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+    <h3>TrollStore</h3>
+    <a class="download" href="#">Download</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 iOSGhost - All Rights Reserved
+</div>
+
+</body>
+</html>
