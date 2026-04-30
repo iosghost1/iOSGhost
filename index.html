@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>iOSGhost</title>
 
 <style>
@@ -19,18 +18,14 @@ body {
     text-align:center;
     padding:20px;
 }
-
 .logo {
     width:80px;
     border-radius:50%;
 }
-
 .title {
     font-size:22px;
     margin-top:10px;
 }
-
-/* TELEGRAM */
 .telegram {
     display:inline-block;
     margin-top:10px;
@@ -62,35 +57,29 @@ body {
     border-bottom:1px solid #1c222b;
     align-items:center;
 }
-
 .app img {
     width:60px;
     border-radius:15px;
     margin-right:10px;
 }
-
 .info {
     flex:1;
 }
-
 .buttons {
     display:flex;
     flex-direction:column;
     gap:5px;
 }
-
 .btn {
     padding:7px;
     border-radius:8px;
     font-size:12px;
     cursor:pointer;
 }
-
 .fast {
     background:#00ff9d;
     color:black;
 }
-
 .backup {
     border:1px solid #00ff9d;
     color:#00ff9d;
@@ -108,21 +97,18 @@ body {
     padding:10px;
     border-top:1px solid #1c222b;
 }
-
 .nav button {
     background:none;
     border:none;
     color:#00ff9d;
-    font-size:14px;
 }
 
-/* SETTINGS PAGE */
+/* SETTINGS */
 #settings {
     display:none;
     padding:20px;
 }
 
-/* FOOTER */
 .footer {
     text-align:center;
     font-size:12px;
@@ -134,65 +120,74 @@ body {
 
 <body>
 
-<!-- APPS PAGE -->
+<!-- APPS -->
 <div id="appsPage">
 
 <div class="header">
-    <img src="LOGO_LINK" class="logo">
-    <div class="title">iOSGhost Store</div>
-    <a href="https://t.me/i0sghost" class="telegram">JOIN TELEGRAM</a>
+<img src="LOGO_LINK" class="logo">
+<div class="title">iOSGhost Store</div>
+<a href="https://t.me/i0sghost" class="telegram">JOIN TELEGRAM</a>
 </div>
 
 <div class="search">
-    <input type="text" id="search" placeholder="Search apps..." onkeyup="searchApp()">
+<input type="text" id="search" placeholder="Search apps..." onkeyup="searchApp()">
 </div>
 
 <div id="apps">
 
+<script>
+function app(name){
+return `
 <div class="app">
 <img src="https://via.placeholder.com/60">
 <div class="info">
-<h3>Video Star VIP</h3>
-<p>585MB</p>
+<h3>${name}</h3>
+<p>Version • MB</p>
 </div>
 <div class="buttons">
-<button class="btn fast">Fast Download</button>
-<button class="btn backup">Backup Download</button>
+<button onclick="window.location='FAST_LINK'" class="btn fast">Fast Download</button>
+<button onclick="window.location='BACKUP_LINK'" class="btn backup">Backup Download</button>
 </div>
-</div>
+</div>`
+}
 
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info">
-<h3>8 Ball Pool</h3>
-<p>90MB</p>
-</div>
-<div class="buttons">
-<button class="btn fast">Fast Download</button>
-<button class="btn backup">Backup Download</button>
-</div>
-</div>
+document.write(
+app("Netflix") +
+app("Red Dead Redemption") +
+app("Shadow Fight 4 Arena") +
+app("GTA San Andreas") +
+app("GTA Vice City") +
+app("8 Ball Pool (MOD)") +
+app("Car Parking") +
+app("Minecraft") +
+app("ESign") +
+app("Alight Motion") +
+app("InShot") +
+app("VSCO")
+);
+</script>
 
 </div>
 
 <div class="footer">
-For more apps or problems, contact us on Telegram
+Per gjdo problem dhe per me shum appe, na kontaktoni ne privat ne telegram.
 </div>
 
 </div>
 
-<!-- SETTINGS PAGE -->
+<!-- SETTINGS -->
 <div id="settings">
-
 <h2>Settings</h2>
 
-<p><b>Contact:</b></p>
-<a href="https://t.me/i0sghost" class="telegram">Open Telegram</a>
+<p>Telegram Group:</p>
+<a href="https://t.me/i0sghost" class="telegram">Open Group</a>
 
 <br><br>
 
-<p><b>Report a problem:</b></p>
-<a href="https://t.me/i0sghost" class="telegram">Send Report</a>
+<p>Report a problem:</p>
+<a href="https://t.me/iosghostt?text=I%20have%20a%20problem" class="telegram">
+Send Report
+</a>
 
 </div>
 
@@ -203,29 +198,24 @@ For more apps or problems, contact us on Telegram
 </div>
 
 <script>
-
-/* SEARCH */
 function searchApp() {
-    let input = document.getElementById("search").value.toLowerCase();
-    let apps = document.getElementsByClassName("app");
-
-    for (let i = 0; i < apps.length; i++) {
-        let text = apps[i].innerText.toLowerCase();
-        apps[i].style.display = text.includes(input) ? "flex" : "none";
-    }
+let input = document.getElementById("search").value.toLowerCase();
+let apps = document.getElementsByClassName("app");
+for (let i = 0; i < apps.length; i++) {
+let text = apps[i].innerText.toLowerCase();
+apps[i].style.display = text.includes(input) ? "flex" : "none";
+}
 }
 
-/* NAVIGATION */
 function showApps(){
-    document.getElementById("appsPage").style.display="block";
-    document.getElementById("settings").style.display="none";
+document.getElementById("appsPage").style.display="block";
+document.getElementById("settings").style.display="none";
 }
 
 function showSettings(){
-    document.getElementById("appsPage").style.display="none";
-    document.getElementById("settings").style.display="block";
+document.getElementById("appsPage").style.display="none";
+document.getElementById("settings").style.display="block";
 }
-
 </script>
 
 </body>
