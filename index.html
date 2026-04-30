@@ -87,7 +87,7 @@ body {
     background:transparent;
 }
 
-/* NAV */
+/* NAV WITH ICONS */
 .nav {
     position:fixed;
     bottom:0;
@@ -95,13 +95,26 @@ body {
     background:#0b0f14;
     display:flex;
     justify-content:space-around;
-    padding:10px;
+    padding:12px 0;
     border-top:1px solid #1c222b;
 }
-.nav button {
-    background:none;
-    border:none;
+.nav-item {
+    text-align:center;
+    color:#777;
+    font-size:12px;
+    cursor:pointer;
+}
+.nav-item .icon {
+    font-size:22px;
+    margin-bottom:4px;
+}
+.nav-item.active {
     color:#00ff9d;
+}
+.nav-item.active .icon {
+    background:rgba(0,255,157,0.1);
+    padding:8px;
+    border-radius:12px;
 }
 
 /* SETTINGS */
@@ -122,7 +135,7 @@ body {
 
 <body>
 
-<!-- APPS PAGE -->
+<!-- APPS -->
 <div id="appsPage">
 
 <div class="header">
@@ -137,10 +150,10 @@ body {
 
 <div id="apps">
 
-<!-- APP LIST -->
+<!-- APP -->
 <div class="app">
 <img src="https://via.placeholder.com/60">
-<div class="info"><h3>Netflix</h3><p>Version • MB</p></div>
+<div class="info"><h3>ESign</h3><p>Version • MB</p></div>
 <div class="buttons">
 <button onclick="window.location='LINK1'" class="btn fast">Fast Download</button>
 <button onclick="window.location='LINK2'" class="btn backup">Backup Download</button>
@@ -149,7 +162,7 @@ body {
 
 <div class="app">
 <img src="https://via.placeholder.com/60">
-<div class="info"><h3>Red Dead Redemption</h3><p>Version • MB</p></div>
+<div class="info"><h3>Minecraft</h3><p>Version • MB</p></div>
 <div class="buttons">
 <button onclick="window.location='LINK3'" class="btn fast">Fast Download</button>
 <button onclick="window.location='LINK4'" class="btn backup">Backup Download</button>
@@ -158,91 +171,10 @@ body {
 
 <div class="app">
 <img src="https://via.placeholder.com/60">
-<div class="info"><h3>Shadow Fight 4 Arena</h3><p>Version • MB</p></div>
+<div class="info"><h3>8 Ball Pool (MOD)</h3><p>Version • MB</p></div>
 <div class="buttons">
 <button onclick="window.location='LINK5'" class="btn fast">Fast Download</button>
 <button onclick="window.location='LINK6'" class="btn backup">Backup Download</button>
-</div>
-</div>
-
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info"><h3>GTA San Andreas</h3><p>Version • MB</p></div>
-<div class="buttons">
-<button onclick="window.location='LINK7'" class="btn fast">Fast Download</button>
-<button onclick="window.location='LINK8'" class="btn backup">Backup Download</button>
-</div>
-</div>
-
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info"><h3>GTA Vice City</h3><p>Version • MB</p></div>
-<div class="buttons">
-<button onclick="window.location='LINK9'" class="btn fast">Fast Download</button>
-<button onclick="window.location='LINK10'" class="btn backup">Backup Download</button>
-</div>
-</div>
-
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info"><h3>8 Ball Pool (MOD)</h3><p>Version • MB</p></div>
-<div class="buttons">
-<button onclick="window.location='LINK11'" class="btn fast">Fast Download</button>
-<button onclick="window.location='LINK12'" class="btn backup">Backup Download</button>
-</div>
-</div>
-
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info"><h3>Car Parking</h3><p>Version • MB</p></div>
-<div class="buttons">
-<button onclick="window.location='LINK13'" class="btn fast">Fast Download</button>
-<button onclick="window.location='LINK14'" class="btn backup">Backup Download</button>
-</div>
-</div>
-
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info"><h3>Minecraft</h3><p>Version • MB</p></div>
-<div class="buttons">
-<button onclick="window.location='LINK15'" class="btn fast">Fast Download</button>
-<button onclick="window.location='LINK16'" class="btn backup">Backup Download</button>
-</div>
-</div>
-
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info"><h3>ESign</h3><p>Version • MB</p></div>
-<div class="buttons">
-<button onclick="window.location='LINK17'" class="btn fast">Fast Download</button>
-<button onclick="window.location='LINK18'" class="btn backup">Backup Download</button>
-</div>
-</div>
-
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info"><h3>Alight Motion</h3><p>Version • MB</p></div>
-<div class="buttons">
-<button onclick="window.location='LINK19'" class="btn fast">Fast Download</button>
-<button onclick="window.location='LINK20'" class="btn backup">Backup Download</button>
-</div>
-</div>
-
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info"><h3>InShot</h3><p>Version • MB</p></div>
-<div class="buttons">
-<button onclick="window.location='LINK21'" class="btn fast">Fast Download</button>
-<button onclick="window.location='LINK22'" class="btn backup">Backup Download</button>
-</div>
-</div>
-
-<div class="app">
-<img src="https://via.placeholder.com/60">
-<div class="info"><h3>VSCO</h3><p>Version • MB</p></div>
-<div class="buttons">
-<button onclick="window.location='LINK23'" class="btn fast">Fast Download</button>
-<button onclick="window.location='LINK24'" class="btn backup">Backup Download</button>
 </div>
 </div>
 
@@ -265,16 +197,22 @@ Për çdo problem ose për më shumë aplikacione, na kontaktoni në Telegram.
 <br><br>
 
 <p>Report a problem:</p>
-<a href="https://t.me/iosghostt?text=Hello%2C%20I%20have%20a%20problem" class="telegram">
+<a href="https://t.me/iosghostt?text=Hello%20I%20have%20a%20problem" class="telegram">
 Send Report
 </a>
-
 </div>
 
 <!-- NAV -->
 <div class="nav">
-<button onclick="showApps()">Apps</button>
-<button onclick="showSettings()">Settings</button>
+  <div class="nav-item active" onclick="showApps()">
+    <div class="icon">⬛⬛<br>⬛⬛</div>
+    <span>Apps</span>
+  </div>
+
+  <div class="nav-item" onclick="showSettings()">
+    <div class="icon">⚙️</div>
+    <span>Settings</span>
+  </div>
 </div>
 
 <script>
@@ -287,14 +225,22 @@ apps[i].style.display = text.includes(input) ? "flex" : "none";
 }
 }
 
+function setActive(index){
+  let items = document.querySelectorAll(".nav-item");
+  items.forEach(i => i.classList.remove("active"));
+  items[index].classList.add("active");
+}
+
 function showApps(){
 document.getElementById("appsPage").style.display="block";
 document.getElementById("settings").style.display="none";
+setActive(0);
 }
 
 function showSettings(){
 document.getElementById("appsPage").style.display="none";
 document.getElementById("settings").style.display="block";
+setActive(1);
 }
 </script>
 
