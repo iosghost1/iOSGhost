@@ -1,243 +1,232 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>iOSGhost</title>
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial;
-  background: #0b0b0b;
-  color: white;
+    margin:0;
+    font-family: Arial;
+    background:#0b0f14;
+    color:white;
 }
 
-/* NAVBAR */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  border-bottom: 1px solid red;
+/* HEADER */
+.header {
+    text-align:center;
+    padding:20px;
 }
 
 .logo {
-  color: red;
-  font-size: 22px;
-  font-weight: bold;
+    width:80px;
+    border-radius:50%;
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-  margin-top: 20px;
+.title {
+    font-size:22px;
+    margin-top:10px;
 }
 
-.hero img {
-  width: 140px;
-  border-radius: 50%;
-  border: 3px solid red;
-  box-shadow: 0 0 20px red;
+/* TELEGRAM */
+.telegram {
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 15px;
+    background:#00ff9d;
+    color:black;
+    border-radius:20px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-/* TELEGRAM BUTTON */
-.telegram-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 35px;
-  background: linear-gradient(45deg, #ff0000, #ff3b3b);
-  border-radius: 12px;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 15px rgba(255,0,0,0.7);
+/* SEARCH */
+.search {
+    padding:15px;
+}
+.search input {
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    background:#1c222b;
+    color:white;
 }
 
-/* FILTERS */
-.filters {
-  text-align: center;
-  margin-top: 20px;
+/* APP */
+.app {
+    display:flex;
+    padding:15px;
+    border-bottom:1px solid #1c222b;
+    align-items:center;
 }
 
-.filters button {
-  background: #1a1a1a;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 20px;
+.app img {
+    width:60px;
+    border-radius:15px;
+    margin-right:10px;
 }
 
-/* GRID */
-.apps {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 20px;
+.info {
+    flex:1;
 }
 
-/* CARD */
-.card {
-  background: #111;
-  border-radius: 15px;
-  padding: 15px;
-  text-align: center;
-  border: 1px solid #222;
-  box-shadow: 0 0 10px rgba(255,0,0,0.1);
-  transition: 0.3s;
+.buttons {
+    display:flex;
+    flex-direction:column;
+    gap:5px;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px red;
+.btn {
+    padding:7px;
+    border-radius:8px;
+    font-size:12px;
+    cursor:pointer;
 }
 
-.card img {
-  width: 80px;
-  height: 80px;
-  border-radius: 15px;
+.fast {
+    background:#00ff9d;
+    color:black;
 }
 
-/* DOWNLOAD */
-.download {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 25px;
-  background: linear-gradient(45deg, red, #ff2a2a);
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+.backup {
+    border:1px solid #00ff9d;
+    color:#00ff9d;
+    background:transparent;
+}
+
+/* NAV */
+.nav {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#0b0f14;
+    display:flex;
+    justify-content:space-around;
+    padding:10px;
+    border-top:1px solid #1c222b;
+}
+
+.nav button {
+    background:none;
+    border:none;
+    color:#00ff9d;
+    font-size:14px;
+}
+
+/* SETTINGS PAGE */
+#settings {
+    display:none;
+    padding:20px;
 }
 
 /* FOOTER */
-.footer-text {
-  text-align: center;
-  margin: 40px 20px;
-  font-size: 14px;
-  color: #aaa;
+.footer {
+    text-align:center;
+    font-size:12px;
+    color:#aaa;
+    padding:20px;
 }
 </style>
-
 </head>
+
 <body>
 
+<!-- APPS PAGE -->
+<div id="appsPage">
+
+<div class="header">
+    <img src="LOGO_LINK" class="logo">
+    <div class="title">iOSGhost Store</div>
+    <a href="https://t.me/i0sghost" class="telegram">JOIN TELEGRAM</a>
+</div>
+
+<div class="search">
+    <input type="text" id="search" placeholder="Search apps..." onkeyup="searchApp()">
+</div>
+
+<div id="apps">
+
+<div class="app">
+<img src="https://via.placeholder.com/60">
+<div class="info">
+<h3>Video Star VIP</h3>
+<p>585MB</p>
+</div>
+<div class="buttons">
+<button class="btn fast">Fast Download</button>
+<button class="btn backup">Backup Download</button>
+</div>
+</div>
+
+<div class="app">
+<img src="https://via.placeholder.com/60">
+<div class="info">
+<h3>8 Ball Pool</h3>
+<p>90MB</p>
+</div>
+<div class="buttons">
+<button class="btn fast">Fast Download</button>
+<button class="btn backup">Backup Download</button>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+For more apps or problems, contact us on Telegram
+</div>
+
+</div>
+
+<!-- SETTINGS PAGE -->
+<div id="settings">
+
+<h2>Settings</h2>
+
+<p><b>Contact:</b></p>
+<a href="https://t.me/i0sghost" class="telegram">Open Telegram</a>
+
+<br><br>
+
+<p><b>Report a problem:</b></p>
+<a href="https://t.me/i0sghost" class="telegram">Send Report</a>
+
+</div>
+
+<!-- NAV -->
 <div class="nav">
-  <div class="logo">iOSGhost</div>
-  <div>☰</div>
+<button onclick="showApps()">Apps</button>
+<button onclick="showSettings()">Settings</button>
 </div>
 
-<div class="hero">
-  <!-- LOGO JOTE -->
-  <img src="logo.png">
+<script>
 
-  <br>
+/* SEARCH */
+function searchApp() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let apps = document.getElementsByClassName("app");
 
-  <a class="telegram-btn" href="https://t.me/i0sghost">Join Telegram</a>
-</div>
+    for (let i = 0; i < apps.length; i++) {
+        let text = apps[i].innerText.toLowerCase();
+        apps[i].style.display = text.includes(input) ? "flex" : "none";
+    }
+}
 
-<div class="filters">
-  <button>Apps</button>
-  <button>Games</button>
-</div>
+/* NAVIGATION */
+function showApps(){
+    document.getElementById("appsPage").style.display="block";
+    document.getElementById("settings").style.display="none";
+}
 
-<div class="apps">
+function showSettings(){
+    document.getElementById("appsPage").style.display="none";
+    document.getElementById("settings").style.display="block";
+}
 
-<!-- 0 -->
-<div class="card">
-  <img src="netflix.png">
-  <h3>Netflix</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 1 -->
-<div class="card">
-  <img src="rdr.png">
-  <h3>Red Dead Redemption</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 2 -->
-<div class="card">
-  <img src="shadow.png">
-  <h3>Shadow Fight 4 Arena</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 3 -->
-<div class="card">
-  <img src="gta_sa.png">
-  <h3>GTA San Andreas</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 4 -->
-<div class="card">
-  <img src="gta_vc.png">
-  <h3>GTA Vice City</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 5 -->
-<div class="card">
-  <img src="8ball.png">
-  <h3>8 Ball Pool (MOD)</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 6 -->
-<div class="card">
-  <img src="car.png">
-  <h3>Car Parking</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 7 -->
-<div class="card">
-  <img src="minecraft.png">
-  <h3>Minecraft</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 8 -->
-<div class="card">
-  <img src="wink.png">
-  <h3>Wink (Premium)</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 9 -->
-<div class="card">
-  <img src="alight.png">
-  <h3>Alight Motion</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 10 -->
-<div class="card">
-  <img src="inshot.png">
-  <h3>InShot</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-<!-- 11 -->
-<div class="card">
-  <img src="vsco.png">
-  <h3>VSCO</h3>
-  <a class="download" href="#">Download</a>
-</div>
-
-</div>
-
-<!-- FOOTER -->
-<div class="footer-text">
-  <p>
-    For any problems or more apps, contact us on our 
-    <a href="https://t.me/i0sghost">Telegram</a> above.<br>
-    Për çdo problem dhe më shumë aplikacione, na kontaktoni në 
-    <a href="https://t.me/i0sghost">Telegramin</a> më sipër.
-  </p>
-</div>
+</script>
 
 </body>
 </html>
