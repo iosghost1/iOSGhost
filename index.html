@@ -1,120 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iOSGhost</title>
+import os
+import random
+import string
+from flask import Flask, request
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-<style>
-body {
-  margin:0;
-  font-family:Arial;
-  background: radial-gradient(circle,#0f0c29,#000);
-  color:white;
-  text-align:center;
-}
+app = Flask(__name__)
 
-.logo img {
-  width:120px;
-  margin-top:40px;
-  border-radius:50%;
-  box-shadow:0 0 25px red;
-}
+# store valid codes
+valid_codes = set()
 
-h1 span { color:#9b5cff; }
+# command /code
+async def code(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    new_code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+    valid_codes.add(new_code)
+    await update.message.reply_text(f"Your code is: {new_code} 🔑")
 
-.box {
-  background:rgba(255,255,255,0.05);
-  margin:25px;
-  padding:20px;
-  border-radius:15px;
-}
+TOKEN = os.getenv("BOT_TOKEN")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
-.btn {
-  background:purple;
-  padding:12px 25px;
-  border-radius:10px;
-  text-decoration:none;
-  color:white;
-}
+bot_app = ApplicationBuilder().token(TOKEN).build()
+bot_app.add_handler(CommandHandler("code", code))
 
-.app {
-  background:rgba(255,255,255,0.05);
-  margin:15px;
-  padding:15px;
-  border-radius:12px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+# webhook route (KJO është që të mungon)
+@app.route(f"/{TOKEN}", methods=["POST"])
+async def webhook():
+    update = Update.de_json(request.get_json(force=True), bot_app.bot)
+    await bot_app.process_update(update)
+    return "ok"
 
-.app img { width:50px; border-radius:10px; }
+# home test
+@app.route("/")
+def home():
+    return "Server is running ✅"
 
-.download {
-  background:#00c853;
-  padding:8px 15px;
-  border-radius:8px;
-  cursor:pointer;
-}
-</style>
-</head>
-
-<body>
-
-<!-- LOGO (vetëm këtë ndrysho) -->
-<div class="logo">
-  <img src="logo.png">
-</div>
-
-<h1>iOS<span>Ghost</span></h1>
-
-<div class="box">
-  <h3>STEP 1</h3>
-  <p>Join Telegram</p>
- <a href="tg://resolve?domain=i0sghost" class="btn">JOIN</a>
-
-  <h3>STEP 2</h3>
-  <p>Open bot and get code</p>
-
-  <h3>STEP 3</h3>
-  <p>Enter code to unlock</p>
-</div>
-
-<!-- APPS -->
-
-<div class="app">
-  <img src="esign.png">
-  <span>eSign</span>
-  <div class="download" onclick="go('LINK1')">Download</div>
-</div>
-
-<div class="app">
-  <img src="trollstore.png">
-  <span>TrollStore</span>
-  <div class="download" onclick="go('LINK2')">Download</div>
-</div>
-
-<div class="app">
-  <img src="filza.png">
-  <span>Filza</span>
-  <div class="download" onclick="go('LINK3')">Download</div>
-</div>
-
-<script>
-async function go(link){
-    let code = prompt("Enter your code:");
-
-    let res = await fetch("https://telegram-bot-mpya.onrender.com/verify?code=" + code);
-    let data = await res.json();
-
-    if(data.valid){
-        alert("Unlocked ✅");
-        window.location.href = link;
-    } else {
-        alert("Invalid code ❌");
-    }
-}
-</script>
-
-</body>
-</html>
+if __name__ == "__main__":
+    bot_app.initialize()
+    bot_app.bot.set_webhook(url=f"{WEBHOOK_URL}/{TOKEN}")
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
