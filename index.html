@@ -9,7 +9,7 @@
     body { margin: 0; background: var(--bg); color: white; font-family: -apple-system, sans-serif; text-align: center; }
     .nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
     .menu-btn { font-size: 30px; cursor: pointer; color: var(--cyan); }
-    .main-logo { width: 60px; height: 60px; border-radius: 14px; border: 2px solid var(--cyan); }
+    .main-logo { width: 60px; height: 60px; border-radius: 14px; border: 2px solid var(--cyan); box-shadow: 0 0 10px var(--cyan); }
     .side-menu { position: fixed; top: 0; left: -280px; width: 250px; height: 100%; background: var(--card); transition: 0.3s; padding: 30px 20px; z-index: 2000; text-align: left; }
     .side-menu.active { left: 0; }
     .menu-item { display: block; padding: 18px 0; color: white; text-decoration: none; border-bottom: 1px solid #333; font-size: 18px; }
@@ -29,9 +29,9 @@
 <body>
   <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
   <div class="side-menu" id="sideMenu">
-    <div onclick="toggleMenu()" style="text-align:right; font-size:25px; color:var(--cyan);">✕</div>
-    <a href="https://tiktok.com" class="menu-item">TikTok</a>
-    <a href="https://t.me" class="menu-item" style="color:var(--red);">Report Problem</a>
+    <div onclick="toggleMenu()" style="text-align:right; font-size:25px; color:var(--cyan); cursor:pointer;">✕</div>
+    <a href="https://tiktok.com" target="_blank" class="menu-item">TikTok</a>
+    <a href="https://t.me" target="_blank" class="menu-item" style="color:var(--red);">Report Problem</a>
   </div>
   <div class="nav">
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -40,30 +40,53 @@
   </div>
   <div class="container">
     <div class="step-card">
-      <div class="step"><div class="step-n">1</div>Join <a href="https://t.me" style="color:var(--cyan); font-weight:bold;">Telegram Group</a></div>
+      <div class="step"><div class="step-n">1</div>Join <a href="https://t.me" target="_blank" style="color:var(--cyan); font-weight:bold;">Telegram Group</a></div>
       <div class="step"><div class="step-n">2</div>Get code from Bot</div>
-      <input type="text" id="codeIn" placeholder="ENTER CODE">
-      <button class="btn-verify" onclick="unlock()">Verify</button>
+      <input type="text" id="codeIn" placeholder="ENTER 6-DIGIT CODE">
+      <button class="btn-verify" onclick="unlock()">Verify & Unlock</button>
     </div>
+
+    <!-- KSING -->
     <div class="app-card">
       <img src="ksign.png" class="app-img">
       <div style="flex-grow:1;"><h3>KSing</h3><p>Premium Tool</p></div>
       <div class="btn-l lock">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get">GET</a>
     </div>
+
+    <!-- TROLLSTORE (FAKE) -->
     <div class="app-card">
       <img src="troll.png" class="app-img">
       <div style="flex-grow:1;"><h3>TrollStore</h3><p>Installer</p></div>
       <div class="btn-l lock">LOCKED</div>
-      <a href="#" class="btn-g get" onclick="alert('Offline')">GET</a>
+      <a href="javascript:void(0)" class="btn-g get" onclick="alert('Maintenance')">GET</a>
     </div>
+
+    <!-- NETFLIX -->
     <div class="app-card">
       <img src="netflix.png" class="app-img">
-      <div style="flex-grow:1;"><h3>Netflix</h3><p>Movies</p></div>
+      <div style="flex-grow:1;"><h3>Netflix</h3><p>Movies & Series</p></div>
+      <div class="btn-l lock">LOCKED</div>
+      <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get">GET</a>
+    </div>
+
+    <!-- PICSART -->
+    <div class="app-card">
+      <img src="picsart.png" class="app-img">
+      <div style="flex-grow:1;"><h3>PicsArt</h3><p>Photo Editor</p></div>
+      <div class="btn-l lock">LOCKED</div>
+      <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get">GET</a>
+    </div>
+
+    <!-- GTA -->
+    <div class="app-card">
+      <img src="gtasa.png" class="app-img">
+      <div style="flex-grow:1;"><h3>GTA SA</h3><p>Classic Mod</p></div>
       <div class="btn-l lock">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get">GET</a>
     </div>
   </div>
+
   <script>
     function toggleMenu(){ 
       const m = document.getElementById('sideMenu');
@@ -71,10 +94,12 @@
       document.getElementById('overlay').style.display = m.classList.contains('active') ? 'block' : 'none';
     }
     function unlock(){
-      if(document.getElementById('codeIn').value.length === 6){
+      const val = document.getElementById('codeIn').value.trim();
+      if(val.length === 6){
         document.querySelectorAll('.lock').forEach(e => e.style.display = 'none');
         document.querySelectorAll('.get').forEach(e => e.style.display = 'block');
-      }
+        alert("Success! Apps Unlocked ✅");
+      } else { alert("Invalid Code! ❌"); }
     }
   </script>
 </body>
