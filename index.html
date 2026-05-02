@@ -20,7 +20,7 @@
     input { width: 100%; padding: 15px; border-radius: 12px; border: 1px solid #444; background: #2c2c2e; color: white; text-align: center; font-size: 16px; outline: none; box-sizing: border-box; margin-top: 10px; }
     .btn-verify { width: 100%; background: var(--cyan); color: #000; padding: 15px; border-radius: 12px; border: none; font-weight: bold; margin-top: 10px; cursor: pointer; text-transform: uppercase; }
     .app-card { display: flex; align-items: center; padding: 15px 0; border-bottom: 1px solid #222; text-align: left; }
-    .app-img { width: 68px; height: 68px; border-radius: 16px; margin-right: 15px; object-fit: cover; }
+    .app-img { width: 68px; height: 68px; border-radius: 16px; margin-right: 15px; object-fit: cover; background: #222; }
     .app-info { flex-grow: 1; }
     .app-info h3 { margin: 0; font-size: 18px; }
     .app-info p { margin: 3px 0; color: #8e8e93; font-size: 13px; }
@@ -49,42 +49,42 @@
       <button class="btn-verify" onclick="unlock()">Verify & Unlock</button>
     </div>
 
-    <!-- APP 1: KSING -->
+    <!-- KSING -->
     <div class="app-card">
       <img src="https://ibb.co" class="app-img">
-      <div class="app-info"><h3>KSing</h3><p>Premium Tool</p></div>
+      <div class="app-info"><h3>KSing</h3><p>Premium Signing Tool</p></div>
       <div class="btn-l locked">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
 
-    <!-- APP 2: TROLLSTORE (FAKE DOWNLOAD) -->
+    <!-- TROLLSTORE (FAKE) -->
     <div class="app-card">
       <img src="https://ibb.co" class="app-img">
       <div class="app-info"><h3>TrollStore</h3><p>iOS Installer</p></div>
       <div class="btn-l locked">LOCKED</div>
-      <a href="javascript:void(0)" class="btn-g get-btn" onclick="alert('Under Maintenance!')">GET</a>
+      <a href="javascript:void(0)" class="btn-g get-btn" onclick="alert('Server Maintenance! Try again later.')">GET</a>
     </div>
 
-    <!-- APP 3: NETFLIX -->
+    <!-- NETFLIX -->
     <div class="app-card">
       <img src="https://ibb.co" class="app-img">
-      <div class="app-info"><h3>Netflix</h3><p>Movies & Series</p></div>
+      <div class="app-info"><h3>Netflix</h3><p>Movies & Series Mod</p></div>
       <div class="btn-l locked">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
 
-    <!-- APP 4: PICSART -->
+    <!-- PICSART -->
     <div class="app-card">
       <img src="https://ibb.co" class="app-img">
-      <div class="app-info"><h3>PicsArt</h3><p>Photo Editor</p></div>
+      <div class="app-info"><h3>PicsArt</h3><p>Pro Photo Editor</p></div>
       <div class="btn-l locked">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
 
-    <!-- APP 5: GTA SA -->
+    <!-- GTA SA -->
     <div class="app-card">
       <img src="https://ibb.co" class="app-img">
-      <div class="app-info"><h3>GTA SA</h3><p>Open World Classic</p></div>
+      <div class="app-info"><h3>GTA San Andreas</h3><p>Open World Classic</p></div>
       <div class="btn-l locked">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
@@ -92,7 +92,7 @@
   </div>
   <script>
     function toggleMenu(){ document.getElementById('sideMenu').classList.toggle('active'); document.getElementById('overlay').style.display = document.getElementById('sideMenu').classList.contains('active') ? 'block' : 'none'; }
-    function unlock(){ const code = document.getElementById('codeIn').value.trim(); if(code.length === 6){ document.querySelectorAll('.locked').forEach(el => el.style.display = 'none'); document.querySelectorAll('.get-btn').forEach(el => el.style.display = 'block'); alert("Unlocked! ✅"); } else { alert("Invalid Code! ❌"); } }
+    function unlock(){ const code = document.getElementById('codeIn').value.trim(); if(code.length === 6){ document.querySelectorAll('.locked').forEach(el => el.style.display = 'none'); document.querySelectorAll('.get-btn').forEach(el => el.style.display = 'block'); alert("Access Granted! ✅"); } else { alert("Invalid Code! ❌"); } }
   </script>
 </body>
 </html>
