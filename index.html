@@ -30,105 +30,84 @@
   </style>
 </head>
 <body>
-
   <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-
+  
   <div class="side-menu" id="sideMenu">
     <div onclick="toggleMenu()" style="text-align:right; font-size:25px; color:var(--cyan); cursor:pointer;">✕</div>
-    
-    <!-- TikTok direkt app -->
-    <a href="snssdk1233://user/profile/khez.gaming" class="menu-item">📱 TikTok</a>
-
-    <!-- Telegram chat -->
-    <a href="tg://resolve?domain=iosghostt" class="menu-item" style="color:var(--red);">⚠️ Report Problem</a>
+    <!-- LINKU I TIKTOKUT QE HAP APIN -->
+    <a href="https://tiktok.com" target="_blank" class="menu-item">📱 TikTok</a>
+    <!-- LINKU QE HAP CHATIN TEND PRIVAT -->
+    <a href="https://t.me" target="_blank" class="menu-item" style="color:var(--red);">⚠️ Report Problem</a>
   </div>
 
   <div class="nav">
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
     <!-- LOGO JOTE -->
-    <img src="https://i.imgur.com/8Km9tLL.png" class="main-logo">
-
+    <img src="https://ibb.co" class="main-logo" onerror="this.src='https://placeholder.com'">
     <div style="width:28px;"></div>
   </div>
 
   <div class="container">
-
     <div class="step-card">
-      <div class="step">
-        <div class="step-n">1</div>
-        Join <a href="https://t.me/i0sghost" style="color:var(--cyan); font-weight:bold; text-decoration:none;">Telegram Group</a>
-      </div>
-
-      <div class="step">
-        <div class="step-n">2</div>
-        Get code from iOSGhost Bot
-      </div>
-
+      <!-- LINKU I GRUPIT TEND -->
+      <div class="step"><div class="step-n">1</div>Join <a href="https://t.me" target="_blank" style="color:var(--cyan); font-weight:bold; text-decoration:none;">Telegram Group</a></div>
+      <div class="step"><div class="step-n">2</div>Get code from iOSGhost Bot</div>
       <input type="text" id="codeIn" placeholder="ENTER 6-DIGIT CODE">
       <button class="btn-verify" onclick="unlock()">Verify & Unlock</button>
     </div>
 
-    <!-- KSING -->
+    <!-- LISTA E APPLICACIONEVE -->
     <div class="app-card">
-      <img src="https://i.imgur.com/2yaf2wb.png" class="app-img">
+      <img src="https://ibb.co" class="app-img">
       <div class="app-info"><h3>KSing</h3><p>Premium Tool</p></div>
       <div class="btn-l locked">LOCKED</div>
-      <a href="#" class="btn-g get-btn">GET</a>
+      <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
 
-    <!-- TROLLSTORE -->
     <div class="app-card">
-      <img src="https://i.imgur.com/jx17oHT.png" class="app-img">
+      <img src="https://ibb.co" class="app-img">
       <div class="app-info"><h3>TrollStore</h3><p>iOS Installer</p></div>
       <div class="btn-l locked">LOCKED</div>
-      <a href="javascript:void(0)" class="btn-g get-btn" onclick="alert('Maintenance!')">GET</a>
+      <a href="javascript:void(0)" class="btn-g get-btn" onclick="alert('Maintenance Mode')">GET</a>
     </div>
 
-    <!-- NETFLIX -->
     <div class="app-card">
-      <img src="https://i.imgur.com/7Z6K6bH.png" class="app-img">
+      <img src="https://ibb.co" class="app-img">
       <div class="app-info"><h3>Netflix</h3><p>Movies & Series Mod</p></div>
       <div class="btn-l locked">LOCKED</div>
-      <a href="#" class="btn-g get-btn">GET</a>
+      <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
 
-    <!-- PICSART -->
     <div class="app-card">
-      <img src="https://i.imgur.com/t4Rr2vN.png" class="app-img">
+      <img src="https://ibb.co" class="app-img">
       <div class="app-info"><h3>PicsArt</h3><p>Photo Editor</p></div>
       <div class="btn-l locked">LOCKED</div>
-      <a href="#" class="btn-g get-btn">GET</a>
+      <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
 
-    <!-- GTA -->
     <div class="app-card">
-      <img src="https://i.imgur.com/X0bK7sQ.png" class="app-img">
+      <img src="https://ibb.co" class="app-img">
       <div class="app-info"><h3>GTA San Andreas</h3><p>Classic Mod</p></div>
       <div class="btn-l locked">LOCKED</div>
-      <a href="#" class="btn-g get-btn">GET</a>
+      <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
-
   </div>
 
   <script>
-    function toggleMenu(){
-      document.getElementById('sideMenu').classList.toggle('active');
-      document.getElementById('overlay').style.display =
-        document.getElementById('sideMenu').classList.contains('active') ? 'block' : 'none';
+    function toggleMenu(){ 
+      document.getElementById('sideMenu').classList.toggle('active'); 
+      document.getElementById('overlay').style.display = document.getElementById('sideMenu').classList.contains('active') ? 'block' : 'none'; 
     }
-
-    function unlock(){
-      const code = document.getElementById('codeIn').value.trim();
-      if(code.length === 6){
-        document.querySelectorAll('.locked').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('.get-btn').forEach(el => el.style.display = 'block');
-        alert("Access Granted! ✅");
-      } else {
-        alert("Invalid Code! ❌");
-      }
+    function unlock(){ 
+      const code = document.getElementById('codeIn').value.trim(); 
+      if(code.length === 6){ 
+        document.querySelectorAll('.locked').forEach(el => el.style.display = 'none'); 
+        document.querySelectorAll('.get-btn').forEach(el => el.style.display = 'block'); 
+        alert("Success! Apps Unlocked ✅"); 
+      } else { 
+        alert("Invalid Code!"); 
+      } 
     }
   </script>
-
 </body>
 </html>
