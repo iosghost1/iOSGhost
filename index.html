@@ -9,104 +9,98 @@
     body { margin: 0; background: var(--bg); color: white; font-family: -apple-system, sans-serif; text-align: center; }
     .nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
     .menu-btn { font-size: 28px; cursor: pointer; color: var(--cyan); }
-    .main-logo { width: 65px; height: 65px; border-radius: 15px; border: 2px solid var(--cyan); box-shadow: 0 0 15px var(--cyan); }
+    .main-logo { width: 60px; height: 60px; border-radius: 14px; border: 2px solid var(--cyan); box-shadow: 0 0 10px var(--cyan); }
     .side-menu { position: fixed; top: 0; left: -280px; width: 250px; height: 100%; background: var(--card); transition: 0.3s; padding: 30px 20px; z-index: 2000; text-align: left; }
     .side-menu.active { left: 0; }
     .menu-item { display: block; padding: 15px 0; color: white; text-decoration: none; border-bottom: 1px solid #333; font-size: 18px; }
     .container { padding: 20px; max-width: 500px; margin: auto; }
-    .step-card { background: var(--card); border-radius: 24px; padding: 20px; border: 1px solid #333; text-align: left; margin-bottom: 25px; }
+    .step-card { background: var(--card); border-radius: 20px; padding: 20px; border: 1px solid #333; text-align: left; margin-bottom: 25px; }
     .step { display: flex; margin-bottom: 12px; font-size: 15px; align-items: center; }
-    .step-n { background: var(--cyan); color: #000; font-weight: bold; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; }
+    .step-n { background: var(--cyan); color: #000; font-weight: bold; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; }
     input { width: 100%; padding: 15px; border-radius: 12px; border: 1px solid #444; background: #2c2c2e; color: white; text-align: center; font-size: 16px; outline: none; box-sizing: border-box; margin-top: 10px; }
     .btn-verify { width: 100%; background: var(--cyan); color: #000; padding: 15px; border-radius: 12px; border: none; font-weight: bold; margin-top: 10px; cursor: pointer; text-transform: uppercase; }
     .app-card { display: flex; align-items: center; padding: 15px 0; border-bottom: 1px solid #222; text-align: left; }
-    .app-img { width: 68px; height: 68px; border-radius: 16px; margin-right: 15px; object-fit: cover; background: #222; }
+    .app-img { width: 65px; height: 65px; border-radius: 14px; margin-right: 15px; object-fit: cover; background: #222; }
     .app-info { flex-grow: 1; }
-    .app-info h3 { margin: 0; font-size: 18px; }
+    .app-info h3 { margin: 0; font-size: 17px; }
     .app-info p { margin: 3px 0; color: #8e8e93; font-size: 13px; }
-    .btn-l { background: #2c2c2e; color: var(--red); padding: 7px 18px; border-radius: 22px; font-weight: bold; font-size: 13px; min-width: 70px; text-align: center; }
-    .btn-g { display: none; background: #2c2c2e; color: var(--blue); padding: 7px 22px; border-radius: 22px; font-weight: bold; text-decoration: none; font-size: 13px; text-align: center; }
+    .btn-l { background: #2c2c2e; color: var(--red); padding: 6px 15px; border-radius: 20px; font-weight: bold; font-size: 13px; min-width: 65px; text-align: center; }
+    .btn-g { display: none; background: #2c2c2e; color: var(--blue); padding: 6px 15px; border-radius: 20px; font-weight: bold; text-decoration: none; font-size: 13px; text-align: center; }
     .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1500; }
   </style>
 </head>
 <body>
   <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-  
   <div class="side-menu" id="sideMenu">
     <div onclick="toggleMenu()" style="text-align:right; font-size:25px; color:var(--cyan); cursor:pointer;">✕</div>
-    <!-- LINKU I TIKTOKUT QE HAP APIN -->
-    <a href="https://tiktok.com" target="_blank" class="menu-item">📱 TikTok</a>
-    <!-- LINKU QE HAP CHATIN TEND PRIVAT -->
-    <a href="https://t.me" target="_blank" class="menu-item" style="color:var(--red);">⚠️ Report Problem</a>
+    <a href="https://tiktok.com" class="menu-item">TikTok</a>
+    <a href="https://t.me" class="menu-item" style="color:var(--red);">Report Problem</a>
   </div>
-
   <div class="nav">
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <!-- LOGO JOTE -->
-    <img src="https://ibb.co" class="main-logo" onerror="this.src='https://placeholder.com'">
+    <img src="https://postimg.cc" class="main-logo">
     <div style="width:28px;"></div>
   </div>
-
   <div class="container">
     <div class="step-card">
-      <!-- LINKU I GRUPIT TEND -->
-      <div class="step"><div class="step-n">1</div>Join <a href="https://t.me" target="_blank" style="color:var(--cyan); font-weight:bold; text-decoration:none;">Telegram Group</a></div>
+      <div class="step"><div class="step-n">1</div>Join <a href="https://t.me" style="color:var(--cyan); font-weight:bold; text-decoration:none;">Telegram Group</a></div>
       <div class="step"><div class="step-n">2</div>Get code from iOSGhost Bot</div>
       <input type="text" id="codeIn" placeholder="ENTER 6-DIGIT CODE">
       <button class="btn-verify" onclick="unlock()">Verify & Unlock</button>
     </div>
 
-    <!-- LISTA E APPLICACIONEVE -->
+    <!-- KSING -->
     <div class="app-card">
-      <img src="https://ibb.co" class="app-img">
+      <img src="https://postimg.cc" class="app-img">
       <div class="app-info"><h3>KSing</h3><p>Premium Tool</p></div>
       <div class="btn-l locked">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
 
+    <!-- TROLLSTORE -->
     <div class="app-card">
-      <img src="https://ibb.co" class="app-img">
+      <img src="https://postimg.cc" class="app-img">
       <div class="app-info"><h3>TrollStore</h3><p>iOS Installer</p></div>
       <div class="btn-l locked">LOCKED</div>
-      <a href="javascript:void(0)" class="btn-g get-btn" onclick="alert('Maintenance Mode')">GET</a>
+      <a href="javascript:void(0)" class="btn-g get-btn" onclick="alert('Maintenance')">GET</a>
     </div>
 
+    <!-- NETFLIX -->
     <div class="app-card">
-      <img src="https://ibb.co" class="app-img">
-      <div class="app-info"><h3>Netflix</h3><p>Movies & Series Mod</p></div>
+      <img src="https://postimg.cc" class="app-img">
+      <div class="app-info"><h3>Netflix</h3><p>Movies Mod</p></div>
       <div class="btn-l locked">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
 
+    <!-- PICSART -->
     <div class="app-card">
-      <img src="https://ibb.co" class="app-img">
+      <img src="https://postimg.cc" class="app-img">
       <div class="app-info"><h3>PicsArt</h3><p>Photo Editor</p></div>
       <div class="btn-l locked">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
 
+    <!-- GTA SA -->
     <div class="app-card">
-      <img src="https://ibb.co" class="app-img">
-      <div class="app-info"><h3>GTA San Andreas</h3><p>Classic Mod</p></div>
+      <img src="https://postimg.cc" class="app-img">
+      <div class="app-info"><h3>GTA SA</h3><p>Classic Mod</p></div>
       <div class="btn-l locked">LOCKED</div>
       <a href="itms-services://?action=download-manifest&url=https://githubusercontent.com" class="btn-g get-btn">GET</a>
     </div>
   </div>
-
   <script>
     function toggleMenu(){ 
       document.getElementById('sideMenu').classList.toggle('active'); 
-      document.getElementById('overlay').style.display = document.getElementById('sideMenu').classList.contains('active') ? 'block' : 'none'; 
+      document.getElementById('overlay').style.display = document.getElementById('sideMenu').classList.contains('active') ? 'block' : 'none';
     }
     function unlock(){ 
-      const code = document.getElementById('codeIn').value.trim(); 
-      if(code.length === 6){ 
-        document.querySelectorAll('.locked').forEach(el => el.style.display = 'none'); 
-        document.querySelectorAll('.get-btn').forEach(el => el.style.display = 'block'); 
-        alert("Success! Apps Unlocked ✅"); 
-      } else { 
-        alert("Invalid Code!"); 
-      } 
+      const code = document.getElementById('codeIn').value.trim();
+      if(code.length === 6){
+        document.querySelectorAll('.locked').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.get-btn').forEach(el => el.style.display = 'block');
+        alert("Success! Apps Unlocked ✅");
+      }
     }
   </script>
 </body>
